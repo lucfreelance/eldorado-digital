@@ -1,4 +1,4 @@
-import './main.jsx';
+import './main.jsx';import React from 'react';
 import './custom.css';
 import ShoppingCart from './icons/icon_shopping_cart.svg';
 
@@ -21,26 +21,6 @@ const Store = () => {
               <a href="/">Sudokus</a>
             </li>
           </ul>
-
-          <ul>
-            <li>
-              <a href="./mi-orden.html">My order</a>
-            </li>
-            <li>
-              <a href="./mi-cuenta.html">My account</a>
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              <a
-                href="https://wa.me/573163608459?text=Hola,%20inicia%20una%20conversación%20con%20Ceci%20o%20alguien%20de%20su%20equipo,"
-                className="email"
-              >
-                eldoradodigital@hotmail.com
-              </a>
-            </li>
-          </ul>
         </div>
 
         <div className="navbar-right">
@@ -52,10 +32,11 @@ const Store = () => {
             </li>
           </ul>
         </div>
-        <div className="desktop-menu inactive">
+
+        <div className="desktop-menu">
           <ul>
             <li>
-              <a href="https://wa.me/573232329459?text=Hola,%20inicia%20una%20conversación%20con%20Ceci%20o%20alguien%20de%20su%20equipo,">
+              <a href="https://wa.me/573163908459?text=Hola,%20inicia%20una%20conversación%20conmigo,">
                 WhatsApp
               </a>
             </li>
@@ -77,7 +58,7 @@ const Store = () => {
       <aside className="product-detail inactive">
         <div className="title-container">
           <img src="./icons/flechita.svg" alt="arrow" />
-          <p className="title">Mi orden</p>
+          <p className="title">My order</p>
         </div>
 
         <div className="my-order-content"></div>
@@ -88,6 +69,7 @@ const Store = () => {
           </p>
           <p className="total">$888</p>
         </div>
+
         <div className="button-product-detail--container">
           <button className="primary-button">Complete your purchase</button>
         </div>
@@ -99,11 +81,11 @@ const Store = () => {
         </div>
         <img src="https://ibb.co/6RXRBG6" alt="Interesting coloring book TOPIC SUMMER" />
         <div className="product-info-left">
-          <p>$8,88</p>
+          <p>$8.88</p>
           <p>Book</p>
           <button className="primary-button add-to-cart-button">
             <img src="./icons/bt_add_to_cart.svg" alt="add to cart" />
-            Agregar al carrito
+            Add to Cart
           </button>
         </div>
       </aside>
@@ -115,7 +97,7 @@ const Store = () => {
       <div className="modal inactive">
         <div className="modal-contenido">
           <p className="modal-title">
-            This produc was already added to shop list; try another one...
+            This product has already been added to the shopping list. Please try another one.
           </p>
           <div className="boton-modal">
             <p>Confirm</p>

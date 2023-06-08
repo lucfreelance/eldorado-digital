@@ -67,16 +67,16 @@
 }
 
 .header-title {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 0.8rem;
+  font-size: 2.1rem;
+  color: #f54040;
+  margin-bottom: 0.6rem;
   text-align: center;
   z-index: -1; 
 }
 
 .header-subtitle {
   font-size: 1.125rem;
-  color: #666;
+  color: #098c39;
   margin-bottom: 1.5rem;
   margin-top: 0;
   text-align: center;
@@ -151,16 +151,20 @@
 }
 
 .head-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
   color: #333;
   margin: 20px;
   margin-bottom: 10px;
+  /* border-color: aliceblue; */
+  /* border: aliceblue; */
 }
 
 .head-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   text-align: center;
+  font-size: bold;
+  color: #333;
 }
 
 .navbar {
@@ -210,7 +214,9 @@
   .about-image {
     max-width: 85%;
   }
-  
+  .head-title {
+    font-size: 1.5rem;
+  }
 }
 
 

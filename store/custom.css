@@ -89,15 +89,15 @@ nav {
 
 .desktop-menu {
 	position: absolute;
+	display: grid;
 	background-color: var(--white);
-	top: 60px;
-	right: 60px;
-	width: 120px;
+	top: 150px;
+	right: 30px;
+	width: 100px;
 	height: auto;
-	border: 1px solid var(--very-light-pink);
-	border-top: none;
-	border-radius: 0 0 6px 6px;
-	padding: 20px 10px 0 10px;
+	border: 1.5px solid var(--very-light-pink);
+	border-radius: 6px;
+	padding: 10px;
 }
 .desktop-menu ul {
 	list-style: none;
@@ -130,11 +130,12 @@ nav {
 	width: calc(100% - 24px);
 	height: 100%;
 	background-color: var(--white);
-	position: absolute;
+	position: relative;
 	top: 60px;
 	left: 0;
 	padding-left: 24px;
-	overflow-y: hidden;
+	/* overflow-y: hidden; */
+	display: flex;
 }
 .mobile-menu a {
 	text-decoration: none;
@@ -445,6 +446,22 @@ nav {
 		height: 140px;
 	}
 }
+
+@media (max-width: 767px) {
+	.desktop-menu {
+		position: absolute;
+		display: grid;
+		background-color: var(--white);
+		top: 170px;
+		right: 20px;
+		width: 85px;
+		height: auto;
+		border: 1px solid var(--very-light-pink);
+		padding: 8px;
+	}
+}
+
+
 @media (min-width: 641px) {
 	.mobile-menu {
 		display: none;
