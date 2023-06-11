@@ -1,52 +1,83 @@
-import './main.jsx';import React from 'react';
+import React from 'react';
 import './custom.css';
-import ShoppingCart from './icons/icon_shopping_cart.svg';
 
 const Store = () => {
   return (
-    <div>
+    <div id="store">
       <nav>
-        <div className="mobile-menu">
+        <img src="./icons/icon_menu.svg" alt="menu" className="menu" />
+
+        <div className="mobile-menu inactive">
           <ul>
             <li>
-              <a href="/">All</a>
+              <a href="./index.html">Todos</a>
             </li>
             <li>
-              <a href="/">Word Soups</a>
+              <a href="./index.html">Bolsos</a>
             </li>
             <li>
-              <a href="/">Coloring Books</a>
+              <a href="./moda-mujer.html">Moda Mujer</a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a
+                href="https://wa.me/573232329459?text=Hola,%20inicia%20una%20conversación%20con%20Ceci%20o%20alguien%20de%20su%20equipo,"
+                className="email"
+              >
+                ceciartesanias@gmail.com
+              </a>
             </li>
             <li>
-              <a href="/">Sudokus</a>
+              <a href="/" className="sign-out">
+                Cerrar sesión
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="navbar-left">
+          <img src="./logos/logo_ceci.svg" alt="logo" className="logo" />
+          <ul>
+            <li>
+              <a href="./index.html">Todos</a>
+            </li>
+            <li>
+              <a href="./index.html">Bolsos</a>
+            </li>
+            <li>
+              <a href="./moda-mujer.html">Moda Mujer</a>
             </li>
           </ul>
         </div>
 
         <div className="navbar-right">
           <ul>
-            <li className="navbar-email">eldoradodigital@hotmail.com</li>
+            <li className="navbar-email">ceciartesanias@gmail.com</li>
             <li className="navbar-shopping-cart">
-              <img src={ShoppingCart} alt="shopping cart" />
+              <img src="./icons/icon_shopping_cart.svg" alt="shopping cart" />
               <div>0</div>
             </li>
           </ul>
         </div>
-
-        <div className="desktop-menu">
+        <div className="desktop-menu inactive">
           <ul>
             <li>
-              <a href="https://wa.me/573163908459?text=Hola,%20inicia%20una%20conversación%20conmigo,">
+              <a
+                href="https://wa.me/573232329459?text=Hola,%20inicia%20una%20conversación%20con%20Ceci%20o%20alguien%20de%20su%20equipo,"
+                className="title"
+              >
                 WhatsApp
               </a>
             </li>
             <li>
               <a href="./mi-orden.html" className="title">
-                My order
+                Mi orden
               </a>
             </li>
             <li>
-              <a href="./mi-cuenta.html">My account</a>
+              <a href="./mi-cuenta.html">Mi cuenta</a>
             </li>
             <li>
               <a href="/">Sign out</a>
@@ -58,10 +89,12 @@ const Store = () => {
       <aside className="product-detail inactive">
         <div className="title-container">
           <img src="./icons/flechita.svg" alt="arrow" />
-          <p className="title">My order</p>
+          <p className="title">Mi orden</p>
         </div>
 
-        <div className="my-order-content"></div>
+        <div className="my-order-content">
+          {/* Your content here */}
+        </div>
 
         <div className="order">
           <p>
@@ -71,7 +104,7 @@ const Store = () => {
         </div>
 
         <div className="button-product-detail--container">
-          <button className="primary-button">Complete your purchase</button>
+          <button className="primary-button">Completa tu compra</button>
         </div>
       </aside>
 
@@ -79,28 +112,33 @@ const Store = () => {
         <div className="product-detail-close">
           <img src="./icons/icon_close.png" alt="close" />
         </div>
-        <img src="https://ibb.co/6RXRBG6" alt="Interesting coloring book TOPIC SUMMER" />
+        <img src="https://ibb.co/6RXRBG6" alt="Hermoso collar" />
         <div className="product-info-left">
-          <p>$8.88</p>
-          <p>Book</p>
+          <p>$8,88</p>
+          <p>Collar</p>
+          <p>
+            Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.
+          </p>
           <button className="primary-button add-to-cart-button">
             <img src="./icons/bt_add_to_cart.svg" alt="add to cart" />
-            Add to Cart
+            Agregar al carrito
           </button>
         </div>
       </aside>
 
       <section className="main-container">
-        <div className="cards-container"></div>
+        <div className="cards-container">
+          {/* Your content here */}
+        </div>
       </section>
 
       <div className="modal inactive">
         <div className="modal-contenido">
           <p className="modal-title">
-            This product has already been added to the shopping list. Please try another one.
+            Este producto ya fue agregado a la lista. Prueba otros productos.
           </p>
           <div className="boton-modal">
-            <p>Confirm</p>
+            <p>Aceptar</p>
           </div>
         </div>
       </div>
