@@ -1,241 +1,265 @@
-const Main = () => {
-  let emailMenu = document.querySelector(".navbar-email");
-  let desktopMenu = document.querySelector(".desktop-menu");
-  let iconMenuMobile = document.querySelector(".menu");
-  let mobileMenu = document.querySelector(".mobile-menu");
-  let iconShopping = document.querySelector(".navbar-shopping-cart");
-  let asideShopping = document.querySelector(".product-detail");
-  let divcardscontainer = document.querySelector(".cards-container");
-  let productDetailLeft = document.querySelector(".product-detail-left");
-  let productDetailClose = document.querySelector(".product-detail-close");
-  let myordercontentContainer = document.querySelector(".my-order-content");
-  let countCarrito = document.querySelector(".navbar-shopping-cart div");
-  let totalCarrito = document.querySelector(".total");
-  let modal = document.querySelector(".modal");
-  let cerrarModal = document.querySelector(".boton-modal");
-  let productImageInfor = document.querySelector(
-    ".product-detail-left > img:nth-child(2)"
-  );
-  let labelPriceInfo = document.querySelector(
-    ".product-info-left p:nth-child(1)"
-  );
-  let labelNameInfo = document.querySelector(
-    ".product-info-left p:nth-child(2)"
-  );
-  let labelInforInfo = document.querySelector(
-    ".product-info-left p:nth-child(3)"
-  );
-  let buttonInfo = document.querySelector(".add-to-cart-button");
-  let productosEnCarrito = [];
-  let productoACarrito = [];
+import React, { useEffect, useRef } from 'react';
+import './custom.css';
+import iconMenu from './icons/icon_menu.svg';
+import iconShoppingCart from './icons/icon_shopping_cart.svg';
+import iconClose from './icons/icon_close.png';
+import btAddToCart from './icons/bt_add_to_cart.svg';
+import logoCeci from './logos/logo_ceci.svg';
+import iconArrow from './icons/flechita.svg';
 
-  countCarrito.innerText = document.querySelectorAll(".shopping-cart").length;
-  totalCarrito.innerText = "$0.00";
+const Store = () => {
+  const emailMenu = useRef(null);
+  const desktopMenu = useRef(null);
+  const iconMenuMobile = useRef(null);
+  const mobileMenu = useRef(null);
+  const iconShopping = useRef(null);
+  const asideShopping = useRef(null);
+  const divcardscontainer = useRef(null);
+  const productDetailLeft = useRef(null);
+  const productDetailClose = useRef(null);
+  const myordercontentContainer = useRef(null);
+  const countCarrito = useRef(null);
+  const totalCarrito = useRef(null);
+  const modal = useRef(null);
+  const cerrarModal = useRef(null);
+  const productImageInfor = useRef(null);
+  const labelPriceInfo = useRef(null);
+  const labelNameInfo = useRef(null);
+  const labelInforInfo = useRef(null);
+  const buttonInfo = useRef(null);
+  const productosEnCarrito = useRef([]);
+  const productoACarrito = useRef([]);
 
-  emailMenu.addEventListener("click", toggleMenu);
-  iconMenuMobile.addEventListener("click", toggleMenuMobile);
-  iconShopping.addEventListener("click", toggleAsideShopping);
-  productDetailClose.addEventListener("click", closeProductDetail);
-  buttonInfo.addEventListener("click", butonClick);
-  cerrarModal.addEventListener("click", closeModal);
+  useEffect(() => {
+    countCarrito.current.innerText = document.querySelectorAll('.shopping-cart').length;
+    totalCarrito.current.innerText = '$0.00';
 
-  function butonClick() {
-    agregarCarrito(productoACarrito);
-  }
+    const toggleMenu = () => {
+      productDetailLeft.current.classList.add('inactive');
+      asideShopping.current.classList.add('inactive');
+      desktopMenu.current.classList.toggle('inactive');
+    };
 
-  function toggleMenu() {
-    productDetailLeft.classList.add("inactive");
-    asideShopping.classList.add("inactive");
-    desktopMenu.classList.toggle("inactive");
-  }
+    const toggleMenuMobile = () => {
+      productDetailLeft.current.classList.add('inactive');
+      asideShopping.current.classList.add('inactive');
+      mobileMenu.current.classList.toggle('inactive');
+    };
 
-  function toggleMenuMobile() {
-    productDetailLeft.classList.add("inactive");
-    asideShopping.classList.add("inactive");
-    mobileMenu.classList.toggle("inactive");
-  }
+    const toggleAsideShopping = () => {
+      productDetailLeft.current.classList.add('inactive');
+      mobileMenu.current.classList.add('inactive');
+      desktopMenu.current.classList.add('inactive');
+    };
 
-  function toggleAsideShopping() {
-    productDetailLeft.classList.add("inactive");
-    mobileMenu.classList.add("inactive");
-    desktopMenu.classList.add("inactive");
-    asideShopping.classList.toggle("inactive");
-  }
+    const closeProductDetail = () => {
+      productoACarrito.current = [];
+      asideShopping.current.classList.add('inactive');
+      mobileMenu.current.classList.add('inactive');
+      desktopMenu.current.classList.add('inactive');
+      productDetailLeft.current.classList.add('inactive');
+    };
 
-  function openProductDetail() {
-    asideShopping.classList.add("inactive");
-    mobileMenu.classList.add("inactive");
-    desktopMenu.classList.add("inactive");
-    productDetailLeft.classList.remove("inactive");
-  }
+    const butonClick = () => {
+      agregarCarrito(productoACarrito.current);
+    };
 
-  function closeProductDetail() {
-    productoACarrito = [];
-    asideShopping.classList.add("inactive");
-    mobileMenu.classList.add("inactive");
-    desktopMenu.classList.add("inactive");
-    productDetailLeft.classList.add("inactive");
-  }
+    const closeModal = () => {
+      modal.current.style.display = 'none';
+    };
 
-  function verificarProducto(nameProduct) {
-    return productosEnCarrito.some(function (articulo) {
-      return articulo === nameProduct;
-    });
-  }
+    emailMenu.current.addEventListener('click', toggleMenu);
+    iconMenuMobile.current.addEventListener('click', toggleMenuMobile);
+    iconShopping.current.addEventListener('click', toggleAsideShopping);
+    productDetailClose.current.addEventListener('click', closeProductDetail);
+    buttonInfo.current.addEventListener('click', butonClick);
+    cerrarModal.current.addEventListener('click', closeModal);
 
-  function closeModal() {
-    modal.style.display = "none";
-  }
+    return () => {
+      emailMenu.current.removeEventListener('click', toggleMenu);
+      iconMenuMobile.current.removeEventListener('click', toggleMenuMobile);
+      iconShopping.current.removeEventListener('click', toggleAsideShopping);
+      productDetailClose.current.removeEventListener('click', closeProductDetail);
+      buttonInfo.current.removeEventListener('click', butonClick);
+      cerrarModal.current.removeEventListener('click', closeModal);
+    };
+  }, []);
 
-  let productList = [];
-  productList.push({
-    name: "Collar - Princesa Flor",
-    price: 30000,
-    image:
-      "https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.",
-  });
-  productList.push({
-    name: "Etiquetas decorativas - Hello Kity y personajes similares (Bajo encargo especial.",
-    price: 25000,
-    image:
-      "https://i.ibb.co/KbHwcqG/6.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "Si quieres gritarle al mundo que eres una loca fanática de Hello Kitty, ahora puedes llevar tu manía a todas partes en tu coche o en tu mochila.",
-  });
-  productList.push({
-    name: "Escultura - Chiva cantinera",
-    price: 1500,
-    image:
-      "https://i.ibb.co/D4f6VvV/5.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "Para los que extrañan las vervenas, el guaro, el relajo, las montoneras y un lugar donde los mafiosos se sientan como en casa... Además esas chivas a Juanchito con asalto incluído 😉",
-  });
-  productList.push({
-    name: "Juguete didáctico - Simulador de necropsias para niños hasta 9 años.",
-    price: 895,
-    image:
-      "https://i.ibb.co/wSPmvTj/8.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "Si tu hijo o hija demuestran aptitudes para las ciencias forenses, puedes animarlos desde pequeñós a conocer las asquerosas entrañas de los seres vivientes (sin la sangre ni vampiros involucrados).",
-  });
+  const agregarCarrito = (producto) => {
+    const verificarProducto = (nameProduct) => {
+      return productosEnCarrito.current.some((articulo) => articulo.name === nameProduct);
+    };
 
-  function renderListProduct(productList) {
-    for (const product of productList) {
-      let divproductCard = document.createElement("div");
-      let imgproductcard = document.createElement("img");
-      let divproductinfo = document.createElement("div");
-      let divdivproductinfo = document.createElement("div");
-      let pprice = document.createElement("p");
-      let pname = document.createElement("p");
-      let figureproductinfo = document.createElement("figure");
-      let imgproductinfo = document.createElement("img");
-      divproductCard.classList.add("product-card");
-      imgproductcard.setAttribute("src", product.image);
-      divproductinfo.classList.add("product-info");
-      pprice.innerText = "$" + product.price;
-      pname.innerText = product.name;
-      imgproductinfo.setAttribute("src", "./icons/bt_add_to_cart.svg");
-
-      figureproductinfo.appendChild(imgproductinfo);
-      divdivproductinfo.appendChild(pprice);
-      divdivproductinfo.appendChild(pname);
-
-      divproductinfo.appendChild(divdivproductinfo);
-      divproductinfo.appendChild(figureproductinfo);
-
-      divproductCard.appendChild(imgproductcard);
-      divproductCard.appendChild(divproductinfo);
-
-      divcardscontainer.appendChild(divproductCard);
-
-      imgproductcard.addEventListener("click", function () {
-        mostrarInfoProduct(
-          product.image,
-          product.price,
-          product.name,
-          product.desc
-        );
-        openProductDetail();
+    if (!verificarProducto(producto.name)) {
+      productosEnCarrito.current.push({
+        name: producto.name,
+        price: producto.price,
+        quantity: producto.quantity,
       });
-
-      imgproductinfo.addEventListener("click", function () {
-        let productoAgregado = [];
-        productoAgregado.push({
-          name: product.name,
-          price: product.price,
-          image: product.image,
-        });
-        agregarCarrito(productoAgregado);
+    } else {
+      productosEnCarrito.current.forEach((articulo) => {
+        if (articulo.name === producto.name) {
+          articulo.quantity += producto.quantity;
+        }
       });
     }
-  }
 
-  /* Funcion para agregar productos al carrito */
-  function agregarCarrito(producto) {
-    if (verificarProducto(producto[0].name)) {
-      productoACarrito = [];
-      return (modal.style.display = "grid");
-    }
+    const carritoItem = document.createElement('div');
+    carritoItem.classList.add('shopping-cart');
+    carritoItem.innerHTML = `
+      <img src=${producto.img} alt=${producto.name} class="product-image">
+      <div class="product-info">
+        <span class="product-name">${producto.name}</span>
+        <span class="product-price">$${producto.price.toFixed(2)}</span>
+        <div class="quantity-info">
+          <span class="product-quantity">Quantity: ${producto.quantity}</span>
+          <button class="btn-remove">Remove</button>
+        </div>
+      </div>
+    `;
+    asideShopping.current.appendChild(carritoItem);
+    countCarrito.current.innerText = document.querySelectorAll('.shopping-cart').length;
 
-    /* Creacion de elementos HTML */
-    let divShoppingCart = document.createElement("div");
-    let figureShoppingCart = document.createElement("figure");
-    let imgfigureShoppingCart = document.createElement("img");
-    let pnameShoppingCart = document.createElement("p");
-    let ppriceShoppingCart = document.createElement("p");
-    let imgcloseShoppingCart = document.createElement("img");
-
-    /* Se agrega contenido a cada uno de los elementos */
-    divShoppingCart.classList.add("shopping-cart");
-    imgfigureShoppingCart.setAttribute("src", producto[0].image);
-    pnameShoppingCart.innerText = producto[0].name;
-    ppriceShoppingCart.innerText = "$" + producto[0].price;
-    imgcloseShoppingCart.setAttribute("src", "./icons/icon_close.png");
-    imgcloseShoppingCart.classList.add("removeList");
-
-    /* Se insertan los documentos */
-    figureShoppingCart.appendChild(imgfigureShoppingCart);
-    divShoppingCart.appendChild(figureShoppingCart);
-    divShoppingCart.appendChild(pnameShoppingCart);
-    divShoppingCart.appendChild(ppriceShoppingCart);
-    divShoppingCart.appendChild(imgcloseShoppingCart);
-    myordercontentContainer.appendChild(divShoppingCart);
-
-    /* Se agregan la cantidad de productos ademas de la suma de precios */
-    countCarrito.innerText = document.querySelectorAll(".shopping-cart").length;
-    totalCarrito.innerText =
-      "$" +
-      (Number(totalCarrito.innerText.substring(1)) + Number(producto[0].price));
-    productosEnCarrito.push(producto[0].name);
-
-    /* Funcion para quitar productos del carrito */
-    imgcloseShoppingCart.addEventListener("click", function () {
-      divShoppingCart.remove();
-      countCarrito.innerText =
-        document.querySelectorAll(".shopping-cart").length;
-      totalCarrito.innerText =
-        "$" +
-        (Number(totalCarrito.innerText.substring(1)) -
-          Number(producto[0].price));
-      productosEnCarrito.splice(
-        productosEnCarrito.indexOf(producto[0].name),
-        1
-      );
+    const btnRemove = carritoItem.querySelector('.btn-remove');
+    btnRemove.addEventListener('click', () => {
+      productosEnCarrito.current = productosEnCarrito.current.filter((articulo) => articulo.name !== producto.name);
+      asideShopping.current.removeChild(carritoItem);
+      countCarrito.current.innerText = document.querySelectorAll('.shopping-cart').length;
+      actualizarTotal();
     });
-  }
 
-  function mostrarInfoProduct(imagen, precio, nombre, descripcion) {
-    productImageInfor.setAttribute("src", imagen);
-    labelPriceInfo.innerText = "$" + precio;
-    labelNameInfo.innerText = nombre;
-    labelInforInfo.innerText = descripcion;
-    productoACarrito = [];
-    productoACarrito.push({
-      name: nombre,
-      price: precio,
-      image: imagen,
+    actualizarTotal();
+    closeModal();
+  };
+
+  const actualizarTotal = () => {
+    let total = 0;
+    productosEnCarrito.current.forEach((articulo) => {
+      total += articulo.price * articulo.quantity;
     });
-  }
+    totalCarrito.current.innerText = `$${total.toFixed(2)}`;
+  };
 
-  renderListProduct(productList);
-};
+  const mostrarProducto = (producto) => {
+    productImageInfor.current.src = producto.img;
+    labelPriceInfo.current.innerText = `$${producto.price.toFixed(2)}`;
+    labelNameInfo.current.innerText = producto.name;
+    labelInforInfo.current.innerText = producto.info;
+    productoACarrito.current = {
+      name: producto.name,
+      price: producto.price,
+      img: producto.img,
+      quantity: 1,
+    };
+    productDetailLeft.current.classList.remove('inactive');
+  };
 
-export default Main;
+  const mostrarModal = () => {
+    modal.current.style.display = 'flex';
+  };
+
+  const productos = [
+    {
+      id: 1,
+      name: 'Product 1',
+      price: 9.99,
+      img: 'path-to-image-1',
+      info: 'Product 1 description',
+    },
+    {
+      id: 2,
+      name: 'Product 2',
+      price: 19.99,
+      img: 'path-to-image-2',
+      info: 'Product 2 description',
+    },
+    // Add more products here
+  ];
+
+  return (
+    <div>
+      <header>
+        <div className="email-menu" ref={emailMenu}>
+          <img src={iconMenu} alt="Menu" />
+          <span>Menu</span>
+        </div>
+        <div className="desktop-menu inactive" ref={desktopMenu}>
+          <ul>
+            <li>Home</li>
+            <li>Products</li>
+            <li>Contact</li>
+            <li>About</li>
+          </ul>
+        </div>
+        <div className="mobile-menu inactive" ref={mobileMenu}>
+          <ul>
+            <li>Home</li>
+            <li>Products</li>
+            <li>Contact</li>
+            <li>About</li>
+          </ul>
+        </div>
+        <div className="cart-container">
+          <img src={iconShoppingCart} alt="Cart" onClick={mostrarProducto} />
+          <span className="cart-counter" ref={countCarrito}>0</span>
+        </div>
+      </header>
+      <main>
+        <div className="products-container">
+          {productos.map((producto) => (
+            <div className="product-item" key={producto.id}>
+              <img src={producto.img} alt={producto.name} />
+              <div className="product-details">
+                <span className="product-name">{producto.name}</span>
+                <span className="product-price">$ {producto.price.toFixed(2)}</span>
+                <button className="btn-add-cart" onClick={() => mostrarProducto(producto)}>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="product-detail inactive" ref={productDetailLeft}>
+          <div className="product-info">
+            <img src="" alt="" ref={productImageInfor} />
+            <div className="product-text">
+              <span className="product-name" ref={labelNameInfo}></span>
+              <span className="product-price" ref={labelPriceInfo}></span>
+              <p className="product-description" ref={labelInforInfo}></p>
+            </div>
+          </div>
+          <div className="product-add">
+            <button className="btn-add-cart" onClick={agregarCarrito}>Add to Cart</button>
+          </div>
+        </div>
+      </main>
+      <aside className="shopping-cart" ref={asideShopping}>
+        <div className="shopping-cart-header">
+          <h3>Shopping Cart</h3>
+          <button className="btn-close" onClick={toggleAsideShopping}>
+            <img src={iconClose} alt="Close" />
+          </button>
+        </div>
+        <div className="shopping-cart-items">
+          {/* Shopping cart items */}
+        </div>
+        <div className="shopping-cart-total">
+          Total: <span ref={totalCarrito}>$0.00</span>
+        </div>
+      </aside>
+      <div className="modal" ref={modal}>
+        <div className="modal-content">
+          <span className="modal-close" onClick={cerrarModal}>&times;</span>
+          <h2>Welcome to our store!</h2>
+          <p>Sign up for our newsletter and get 10% off your first purchase.</p>
+          <form className="modal-form">
+            <input type="email" placeholder="Email address" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Store;
