@@ -18,12 +18,12 @@
 .header {
   /* position:absolute; */
   /* position: relative; */
+  /* margin-bottom: 20px; */
   position: absolute;
   overflow: hidden;
   top: 0;
   left: 0;
   width: 100%;
-  /* z-index: 999; */
   border-radius: 0 0 50% 50%;   
   background-image: "https://openaicomproductionae4b.blob.core.windows.net/production-twill-01/a00ea7c2-ed9d-4145-9d81-53aac2d29d6d/graphics-20230518-084016.mp4";
     
@@ -76,8 +76,8 @@
 
 .header-subtitle {
   font-size: 1.125rem;
-  color: #098c39;
-  margin-bottom: 1.5rem;
+  color: #f54040;
+  margin-bottom: 0.5rem;
   margin-top: 0;
   text-align: center;
    
@@ -224,4 +224,21 @@
   .featured-image {
     width: 80%; 
   }
+}
+
+
+.left-phrase {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF69B4;
+  text-align: center;
+  margin: 10px;
+}
+
+.right-phrase {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6495ED;
+  text-align: center;
+  margin: 10px;
 }

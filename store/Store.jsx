@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './custom.css'
+import EldoradoStore from './logos/eldorado-logo-small.jpeg'
+import ToggleMobileMenu from './icons/icon_menu.svg'
+import ShoppingCart from './icons/icon_shopping_cart.svg'
 
 const Store = () => {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
@@ -30,10 +33,10 @@ const Store = () => {
 
   const productList = [
     {
-      name: 'Collar - Princesa Flor',
+      name: 'Collar - Flower Princess',
       price: 30000,
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+      desc: 'Beautiful collar'
     },
     // Add more products here
   ];
@@ -41,9 +44,10 @@ const Store = () => {
   return (
     <>
       <nav>
-        <img src="./icons/icon_menu.svg" alt="menu" className="menu" onClick={toggleMobileMenu} />
+      <img src={EldoradoStore} alt="EldoradoStore" title="EldoradoStore" className="about-image" />
+      <img src={ToggleMobileMenu} alt="menu" className="menu" onClick={ToggleMobileMenu} />
 
-        <div className={`mobile-menu ${mobileMenuActive ? '' : 'inactive'}`}>
+        {/* <div className={`mobile-menu ${mobileMenuActive ? '' : 'inactive'}`}> */}
           <ul>
             <li>
               <a href="#">All</a>
@@ -67,25 +71,27 @@ const Store = () => {
 
           <ul>
             <li>
-              <a href="https://wa.me/573232329459?text=Hola,%20inicia%20una%20conversación%20con%20Ceci%20o%20alguien%20de%20su%20equipo," className="email">ceciartesanias@gmail.com</a>
+              <a href="https://wa.me/3053908409?text=Hola,%20inicia%20una%20conversación%20con%20alguien%20del%20equipo," className="email">eldorado@digital.com</a>
             </li>
             <li>
               <a href="/" className="sign-out">Cerrar sesión</a>
             </li>
           </ul>
-        </div>
+       
 
+
+        ShoppingCart
         <div className="navbar-left">
-          <img src="./logos/logo_ceci.svg" alt="logo" className="logo" />
+          <img src="./logos/eldado-logo.png" alt="logo" className="logo" />
           <ul>
             <li>
-              <a href="./index.html">Todos</a>
+              <a href="./index.html">All</a>
             </li>
             <li>
-              <a href="./index.html">Bolsos</a>
+              <a href="./index.html">Books</a>
             </li>
             <li>
-              <a href="./moda-mujer.html">Moda Mujer</a>
+              <a href="./moda-mujer.html">Patterns</a>
             </li>
             {/* Add more menu items */}
           </ul>
@@ -93,7 +99,7 @@ const Store = () => {
 
         <div className="navbar-right">
           <ul>
-            <li className="navbar-email">ceciartesanias@gmail.com</li>
+            <li className="navbar-email">eldorado@digital.com</li>
             <li>
               <a href="./mi-orden.html" className="navbar-cart">
                 <img src="./icons/icon_cart.svg" alt="cart" />
@@ -101,7 +107,7 @@ const Store = () => {
               </a>
             </li>
             <li>
-              <a href="/" className="sign-out">Cerrar sesión</a>
+              <a href="/" className="sign-out">Cerrar</a>
             </li>
           </ul>
         </div>
@@ -114,7 +120,7 @@ const Store = () => {
               <img src={product.image} alt={product.name} className="product-image" />
               <h3 className="product-name">{product.name}</h3>
               <p className="product-price">${product.price}</p>
-              <button className="add-to-cart" onClick={() => addToCart(product)}>Agregar al carrito</button>
+              <button className="add-to-cart" onClick={() => addToCart(product)}>Add to cart</button>
               <p className="product-desc">{product.desc}</p>
             </div>
           ))}
@@ -124,7 +130,7 @@ const Store = () => {
           <div className="modal">
             <div className="modal-content">
               <span className="close-modal" onClick={closeModal}>&times;</span>
-              <h2>Detalle del producto</h2>
+              <h2>Product detail</h2>
               {/* Add product detail information here */}
             </div>
           </div>
