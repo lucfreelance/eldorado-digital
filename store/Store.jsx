@@ -29,7 +29,7 @@ const Store = () => {
 
   const productList = [
     {
-      name: 'Word Soup # 1 - Theme: FAUNA',
+      name: 'Word Soup #1 - Theme: FAUNA',
       price: 12,
       image: 'https://i.imgur.com/QTIy72i.jpg',
       desc: 'Introducing our 1st Word Soup throught Amazon KDP: FAUNA'
@@ -123,7 +123,11 @@ const Store = () => {
         <section className="product-list">
           {productList.map((product, index) => (
             <div key={index} className="product-card" onClick={() => openProductDetail(product)}>
-              <img src={product.image} alt={product.name} />
+              <img
+                src={product.image}
+                alt={product.name}
+                style={{ maxHeight: '300px', width: 'auto' }}
+              />
               <div className="product-info">
                 <h3>{product.name}</h3>
                 <p>{product.desc}</p>
@@ -142,7 +146,11 @@ const Store = () => {
             </span>
             {productList.map((product, index) => (
               <div key={index} className="product-details">
-                <img src={product.image} alt={product.name} />
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  style={{ maxHeight: '300px', width: 'auto' }}
+                />
                 <div className="product-info">
                   <h3>{product.name}</h3>
                   <p>{product.desc}</p>
