@@ -93,6 +93,21 @@
 }
 
 
+.video-button {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 2;
+}
+
+.cart-button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 2;
+}
+
+
 /* App */
 @media (max-width: 768px) {
   .header {
