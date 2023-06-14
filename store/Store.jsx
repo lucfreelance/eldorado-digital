@@ -8,6 +8,7 @@ const Store = () => {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const [desktopMenuActive, setDesktopMenuActive] = useState(false);
   const [productDetailActive, setProductDetailActive] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [cartItems, setCartItems] = useState([]);
 
   const toggleMenu = () => {
@@ -67,6 +68,7 @@ const Store = () => {
   ];
 
   const openProductDetail = (product) => {
+    setSelectedProduct(product);
     setProductDetailActive(true);
     setDesktopMenuActive(false);
     setMobileMenuActive(false);
@@ -74,7 +76,13 @@ const Store = () => {
   };
 
   const closeProductDetail = () => {
+    setSelectedProduct(null);
     setProductDetailActive(false);
+  };
+
+  const goToCart = () => {
+    // Redirect to the cart page (replace with your desired logic)
+    window.location.href = './my-order.html';
   };
 
   return (
@@ -109,7 +117,7 @@ const Store = () => {
                 <a href="/" className="sign-out">Close</a>
               </li>
               <li>
-                <a href="./mi-orden.html" className="navbar-cart">
+                <a href="#" className="navbar-cart">
                   <img src={ShoppingCart} alt="cart" />
                   {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
                 </a>
@@ -122,16 +130,19 @@ const Store = () => {
       <main className="store-main">
         <section className="product-list">
           {productList.map((product, index) => (
-            <div key={index} className="product-card" onClick={() => openProductDetail(product)}>
+            <div key={index} className="product-card">
               <img
                 src={product.image}
                 alt={product.name}
-                style={{ maxHeight: '300px', width: 'auto' }}
+                style={{ maxHeight: '300px', width: 'auto', cursor: 'pointer' }}
+                onClick={() => openProductDetail(product)}
               />
               <div className="product-info">
                 <h3>{product.name}</h3>
                 <p>{product.desc}</p>
-                <button className="add-to-cart">Add to Cart</button>
+                <button className="add-to-cart" onClick={() => addToCart(product)}>
+                  Add to Cart
+                </button>
               </div>
             </div>
           ))}
@@ -144,22 +155,25 @@ const Store = () => {
             <span className="close-modal" onClick={closeModal}>
               &times;
             </span>
-            {productList.map((product, index) => (
-              <div key={index} className="product-details">
+            {selectedProduct && (
+              <div className="product-details">
                 <img
-                  src={product.image}
-                  alt={product.name}
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
                   style={{ maxHeight: '300px', width: 'auto' }}
                 />
                 <div className="product-info">
-                  <h3>{product.name}</h3>
-                  <p>{product.desc}</p>
-                  <button className="add-to-cart" onClick={() => addToCart(product)}>
+                  <h3>{selectedProduct.name}</h3>
+                  <p>{selectedProduct.desc}</p>
+                  <button className="add-to-cart" onClick={() => addToCart(selectedProduct)}>
                     Add to Cart
+                  </button>
+                  <button className="go-to-cart" onClick={goToCart}>
+                    Go to Cart
                   </button>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       )}
