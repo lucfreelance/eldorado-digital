@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './custom.css';
 import EldoradoStore from './logos/eldorado-logo-small.jpeg';
-import ToggleMobileMenu from './icons/icon_menu.svg';
+import ToggleMenu from './icons/icon_menu.svg';
 import ShoppingCart from './icons/icon_shopping_cart.svg';
 
 const Store = () => {
@@ -10,7 +10,7 @@ const Store = () => {
   const [productDetailActive, setProductDetailActive] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
-  const toggleMobileMenu = () => {
+  const toggleMenu = () => {
     setMobileMenuActive(!mobileMenuActive);
   };
 
@@ -96,6 +96,14 @@ const Store = () => {
             <img src={EldoradoStore} alt="EldoradoStore" title="EldoradoStore" className="logo" />
             <ul className={`navbar-menu ${mobileMenuActive ? 'active' : ''}`}>
               <li>
+                <img
+                  src={ToggleMenu}
+                  alt="Toggle Menu"
+                  className={`toggle-menu ${desktopMenuActive ? 'active' : ''}`}
+                  onClick={toggleDesktopMenu}
+                />
+              </li>
+              <li>
                 <a href="#">All</a>
               </li>
               <li>
@@ -116,14 +124,6 @@ const Store = () => {
                   <img src={ShoppingCart} alt="cart" />
                   {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
                 </a>
-              </li>
-              <li>
-                <img
-                  src={ToggleMobileMenu}
-                  alt="Toggle Desktop Menu"
-                  className={`toggle-desktop-menu ${desktopMenuActive ? 'active' : ''}`}
-                  onClick={toggleDesktopMenu}
-                />
               </li>
             </ul>
           </div>

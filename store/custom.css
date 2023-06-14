@@ -10,7 +10,7 @@
   
 
  /* Store */
-.toggle-desktop-menu {
+.toggle-menu {
 	left: 40px;
   }
   
@@ -156,10 +156,6 @@
   
   .navbar-right a {
 	margin-right: 10px;
-  }
-  
-  .toggle-desktop-menu {
-	left: 40px;
   }
 
 
