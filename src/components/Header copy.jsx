@@ -1,18 +1,16 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import styled from "styled-components";
 import { FaStop, FaShoppingCart } from 'react-icons/fa';
 
 const HeaderContainer = styled.header`
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
+  position: relative;
 `;
 
 const VideoButton = styled.button`
   position: absolute;
+  left: 1rem;
+  top: 1rem;
   z-index: 2;
   background: none;
   border: 2px solid #fff;
@@ -23,8 +21,6 @@ const VideoButton = styled.button`
   align-items: center;
   color: #fff;
   font-size: 1.5rem;
-  bottom: 1rem;
-  right: 1rem;
 `;
 
 const CartButton = styled.button`
@@ -44,14 +40,6 @@ const CartButton = styled.button`
 `;
 
 const Header = () => {
-  const handleVideoStop = () => {
-    // Add logic to stop the video
-  };
-
-  const handleCartClick = () => {
-    // Add logic to proceed with the shopping cart
-  };
-
   return (
     <HeaderContainer>
       <div className="header-video-container">
@@ -76,10 +64,10 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <VideoButton onClick={handleVideoStop}>
+      <VideoButton>
         <FaStop />
       </VideoButton>
-      <CartButton onClick={handleCartClick}>
+      <CartButton>
         <FaShoppingCart />
       </CartButton>
     </HeaderContainer>
