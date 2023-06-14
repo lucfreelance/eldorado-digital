@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './custom.css'
-import EldoradoStore from './logos/eldorado-logo-small.jpeg'
-import ToggleMobileMenu from './icons/icon_menu.svg'
-import ShoppingCart from './icons/icon_shopping_cart.svg'
+import './custom.css';
+import EldoradoStore from './logos/eldorado-logo-small.jpeg';
+import ToggleMobileMenu from './icons/icon_menu.svg';
+import ShoppingCart from './icons/icon_shopping_cart.svg';
 
 const Store = () => {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
@@ -43,12 +43,10 @@ const Store = () => {
 
   return (
     <>
-      <nav>
-      <img src={EldoradoStore} alt="EldoradoStore" title="EldoradoStore" className="about-image" />
-      <img src={ToggleMobileMenu} alt="menu" className="menu" onClick={ToggleMobileMenu} />
-
-        {/* <div className={`mobile-menu ${mobileMenuActive ? '' : 'inactive'}`}> */}
-          <ul>
+      <nav className="navbar">
+        <div className="navbar-left">
+          <img src={EldoradoStore} alt="EldoradoStore" title="EldoradoStore" className="logo" />
+          <ul className="navbar-menu">
             <li>
               <a href="#">All</a>
             </li>
@@ -58,51 +56,16 @@ const Store = () => {
             <li>
               <a href="#">Patterns</a>
             </li>
-          </ul>
-
-          <ul>
-            <li>
-              <a href="./mi-orden.html">Mi orden</a>
-            </li>
-            <li>
-              <a href="./mi-cuenta.html">Mi cuenta</a>
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              <a href="https://wa.me/3053908409?text=Hola,%20inicia%20una%20conversación%20con%20alguien%20del%20equipo," className="email">eldorado@digital.com</a>
-            </li>
-            <li>
-              <a href="/" className="sign-out">Cerrar sesión</a>
-            </li>
-          </ul>
-       
-
-
-        ShoppingCart
-        <div className="navbar-left">
-          <img src="./logos/eldado-logo.png" alt="logo" className="logo" />
-          <ul>
-            <li>
-              <a href="./index.html">All</a>
-            </li>
-            <li>
-              <a href="./index.html">Books</a>
-            </li>
-            <li>
-              <a href="./moda-mujer.html">Patterns</a>
-            </li>
             {/* Add more menu items */}
           </ul>
         </div>
 
         <div className="navbar-right">
-          <ul>
+          <ul className="navbar-links">
             <li className="navbar-email">eldorado@digital.com</li>
             <li>
               <a href="./mi-orden.html" className="navbar-cart">
-                <img src="./icons/icon_cart.svg" alt="cart" />
+                <img src={ShoppingCart} alt="cart" />
                 {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
               </a>
             </li>
