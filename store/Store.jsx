@@ -14,10 +14,6 @@ const Store = () => {
     setMobileMenuActive(!mobileMenuActive);
   };
 
-  const toggleDesktopMenu = () => {
-    setDesktopMenuActive(!desktopMenuActive);
-  };
-
   const toggleProductDetail = () => {
     setProductDetailActive(!productDetailActive);
   };
@@ -33,60 +29,23 @@ const Store = () => {
 
   const productList = [
     {
-      name: 'Collar - Flower Princess',
+      name: 'Collar - Princesa Flor',
       price: 30000,
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Beautiful collar'
-    },
-    {
-      name: 'Collar - Flower Princess',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Beautiful collar'
-    },
-    {
-      name: 'Collar - Flower Princess',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Beautiful collar'
-    },
-    {
-      name: 'Collar - Flower Princess',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Beautiful collar'
-    },
-    {
-      name: 'Collar - Flower Princess',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Beautiful collar'
-    },
-    {
-      name: 'Collar - Flower Princess',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Beautiful collar'
-    },
-    {
-      name: 'Collar - Flower Princess',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Beautiful collar'
-    },
-    {
-      name: 'Collar - Flower Princess',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Beautiful collar'
-    },
-    {
-      name: 'Collar - Flower Princess',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Beautiful collar'
-    },
+      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+    }
   ];
+
+  const openProductDetail = (product) => {
+    setProductDetailActive(true);
+    setDesktopMenuActive(false);
+    setMobileMenuActive(false);
+    addToCart(product);
+  };
+
+  const closeProductDetail = () => {
+    setProductDetailActive(false);
+  };
 
   return (
     <>
@@ -100,7 +59,7 @@ const Store = () => {
                   src={ToggleMenu}
                   alt="Toggle Menu"
                   className={`toggle-menu ${desktopMenuActive ? 'active' : ''}`}
-                  onClick={toggleDesktopMenu}
+                  onClick={() => setDesktopMenuActive(!desktopMenuActive)}
                 />
               </li>
               <li>
@@ -129,34 +88,43 @@ const Store = () => {
           </div>
         </nav>
       </header>
-  
+
       <main className="store-main">
         <section className="product-list">
           {productList.map((product, index) => (
-            <div key={index} className="product-card" onClick={toggleProductDetail}>
-              <img src={product.image} alt={product.name} className="product-image" />
-              <div className="product-details">
-                <h3 className="product-name">{product.name}</h3>
-                <p className="product-price">${product.price}</p>
-                <p className="product-desc">{product.desc}</p>
-                <button className="add-to-cart" onClick={() => addToCart(product)}>Add to cart</button>
+            <div key={index} className="product-card" onClick={() => openProductDetail(product)}>
+<img src={product.image} alt={product.name} />
+                <div className="product-info">
+                  <h3>{product.name}</h3>
+                  <p>{product.desc}</p>
+                  <button className="add-to-cart">Add to Cart</button>
+                </div>
+              </div>
+            ))}
+        </section>
+      </main>
+
+      {productDetailActive && (
+        <div className="product-modal">
+          <div className="modal-content">
+            <span className="close-modal" onClick={closeModal}>
+              &times;
+            </span>
+            <div className="product-details">
+              <img src={productList[0].image} alt={productList[0].name} />
+              <div className="product-info">
+                <h3>{productList[0].name}</h3>
+                <p>{productList[0].desc}</p>
+                <button className="add-to-cart" onClick={() => addToCart(productList[0])}>
+                  Add to Cart
+                </button>
               </div>
             </div>
-          ))}
-        </section>
-  
-        {productDetailActive && (
-          <div className="modal">
-            <div className="modal-content">
-              <span className="close-modal" onClick={closeModal}>&times;</span>
-              <h2>Product detail</h2>
-              {/* Add product detail information here */}
-            </div>
           </div>
-        )}
-      </main>
+        </div>
+      )}
     </>
   );
-}
+};
 
 export default Store;
