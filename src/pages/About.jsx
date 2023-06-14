@@ -35,19 +35,31 @@ const Subtitle = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   color: #999;
   margin-bottom: 10px;
   position: relative;
 
   &:after {
     content: '🌟';
-    position: absolute;
-    bottom: -5px;
-    right: 0;
-    align-text: justified;
+    position: relative;
+    right: 5px;
   }
 `;
+
+// const DescriptionTwo = styled.p`
+//   font-size: 18px;
+//   color: #999;
+//   margin-bottom, 20px;
+//   margin-top: 20px;
+//   position: relative;
+
+//   &:after {
+//     content: '🌙';
+//     position: relative;
+//     right: 5px;
+//   }
+// `;
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -74,24 +86,24 @@ const About = () => {
     <AboutContainer>
       <AboutImage src={Sparky} alt="Sparky moment" />
       <Title>About Eldorado Book Store</Title>
-      <Subtitle>Be our guest 🏠</Subtitle>
+      <Subtitle>Be our guest</Subtitle>
       <Description>
-        Welcome to Eldorado! Our mission is to inspire, educate, and entertain through a curated collection of puzzles, games, challenges, and coloring books suitable for all ages. 🧩
-      </Description>
+        Welcome to Eldorado! Our mission is to inspire, educate, and entertain through a curated collection of puzzles, games, challenges, coloring books and more;  🧩
+      </Description><br />
       <Description>
-        Dive into our virtual wonderland playground and explore a variety of mini-games designed by our talented team. 🎮
-      </Description>
+      ✨🎮Dive into our virtual wonderland playground and explore a variety of mini-games designed by our talented team and suitable for all ages. 
+      </Description><br />
       <Description>
-        Choose from a variety of formats - physical books, e-books, notebooks - and enjoy captivating activities anytime, anywhere. 📚
-      </Description>
+        Eldorado-Store is more than just a place to find low-content activity books. Connect with fellow puzzle lovers and immerse yourself in the magical world of brain teasers and creativity. 🧩✨
+      </Description><br />
       <Description>
-        Eldorado Book Store is more than just a place to find low-content books. It's a vibrant community of puzzle enthusiasts, hosting events, challenges, and discussions. Connect with fellow puzzle lovers and immerse yourself in the magical world of brain teasers and creativity. 🧩✨
-      </Description>
+      🎮📚Choose from a variety of content formats: Physical books, e-books, notebooks… and pick enjoyable activities anytime, anywhere. 
+      </Description><br />
       <Description>
-        Join us on this adventure, where your imagination can soar and your problem-solving skills can flourish. Embark on extraordinary journeys through the captivating low-content books at Eldorado Book Store! 🌟
-      </Description>
+        Join us on this adventure, where your imagination can soar and your problem-solving skills can flourish. Embark on extraordinary journeys through the captivating low-content books at Eldorado Book Store!📚🏠
+      </Description><br />
       <ButtonContainer>
-        <Button href="/about-store">Learn More</Button>
+        <Button href="/about-store">Learn more</Button>
       </ButtonContainer>
     </AboutContainer>
   );
