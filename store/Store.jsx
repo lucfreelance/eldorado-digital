@@ -29,40 +29,40 @@ const Store = () => {
 
   const productList = [
     {
-      name: 'Collar - Princesa Flor',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Introducing our 1st Word Soup: FAUNA'
+      name: 'Word Soup # 1 - Theme: FAUNA',
+      price: 12,
+      image: 'https://i.imgur.com/QTIy72i.jpg',
+      desc: 'Introducing our 1st Word Soup throught Amazon KDP: FAUNA'
     },
     {
-      name: 'Collar - Princesa Flor',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este Introducing our 1st Word Soup: FAUNA'
+      name: 'Coloring Book 1 - Living the Petty Dream',
+      price: 12,
+      image: 'https://i.imgur.com/JPH76wV.jpg',
+      desc: 'Introducing coloring KDP book for ages 4 to 9'
     },
     {
-      name: 'Collar - Princesa Flor',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este Introducing our 1st Word Soup: FAUNA'
+      name: 'Crossword Innuendo A: Celebrity Stars',
+      price: 15,
+      image: 'https://i.imgur.com/ScsU1Kr.jpg',
+      desc: 'Introducing crosswoard KDP book for solving crosswords'
     },
     {
-      name: 'Collar - Princesa Flor',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este Introducing our 1st Word Soup: FAUNA'
+      name: 'The Origami Resolver Division: Kawaii',
+      price: 20,
+      image: 'https://i.imgur.com/eCdKkOd.jpg',
+      desc: 'Introducing origami KDP book to great activities'
     },
     {
-      name: 'Collar - Princesa Flor',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este Introducing our 1st Word Soup: FAUNA'
+      name: 'Sudoku for Ever [1]',
+      price: 15,
+      image: 'https://i.imgur.com/GtDpOUP.jpg',
+      desc: 'Introducing sudoku KDP serie to smart sudoku enthusiast'
     },
     {
-      name: 'Collar - Princesa Flor',
-      price: 30000,
-      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este Introducing our 1st Word Soup: FAUNA'
+      name: 'Color Pattern Serial: (1) Evocating armony',
+      price: 6,
+      image: 'https://i.imgur.com/m0VOa4i.jpg',
+      desc: 'Introducing serial patterns for prettify your digital spaces'
     }
   ];
 
