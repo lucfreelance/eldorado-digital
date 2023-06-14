@@ -72,7 +72,6 @@ const Store = () => {
     setProductDetailActive(true);
     setDesktopMenuActive(false);
     setMobileMenuActive(false);
-    addToCart(product);
   };
 
   const closeProductDetail = () => {

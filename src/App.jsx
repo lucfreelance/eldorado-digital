@@ -29,6 +29,9 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/store" element={<Store />} />
         </Routes>
+        <button className="scroll-button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          Jump to Top
+        </button>
       </div>
     </BrowserRouter>
   );

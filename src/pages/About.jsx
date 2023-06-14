@@ -12,6 +12,9 @@ const AboutContainer = styled.div`
   border-radius: 8px;
   background-color: #f7f7f7;
   margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
 `;
 
 const AboutImage = styled.img`
