@@ -76,8 +76,8 @@
 
 .header-subtitle {
   font-size: 1.125rem;
-  color: #f54040;
-  margin-bottom: 0.5rem;
+  color: #098c39;
+  margin-bottom: 1.5rem;
   margin-top: 0;
   text-align: center;
    
@@ -91,21 +91,6 @@
   height: 100%;
   object-fit: cover;
 }
-
-
-/* .video-button {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  z-index: 2;
-}
-
-.cart-button {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  z-index: 2;
-} */
 
 
 /* App */
