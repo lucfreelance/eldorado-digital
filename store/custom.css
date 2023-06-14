@@ -29,7 +29,7 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 15px;
-	justify-content: center; /* Center the cards horizontally */
+	justify-content: center;
   }
   
   @media (max-width: 500px) {
@@ -50,7 +50,7 @@
 	}
   
 	.product-card {
-	  width: 90%; /* Set the width to 100% for full-width display */
+	  width: 90%;
 	}
   
 	.product-image {
@@ -88,8 +88,8 @@
 	background-color: #f0f0f0;
 	padding: 20px;
 	border-radius: 4px;
-	margin: 0 auto; /* Center the cards horizontally */
-	max-width: 240px; /* Limit the maximum width of each card */
+	margin: 0 auto;
+	max-width: 240px;
   }
   
   .product-details {

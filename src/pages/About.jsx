@@ -11,7 +11,7 @@ const AboutContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f7f7f7;
-  margin-top: 70px;
+  margin-top: 80px;
 `;
 
 const AboutImage = styled.img`
