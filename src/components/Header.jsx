@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import styled from "styled-components";
@@ -45,17 +45,18 @@ const CartButton = styled.button`
 
 const Header = () => {
   const videoRef = useRef(null);
-  const isVideoPlaying = useRef(true);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
 
   const handleVideoToggle = () => {
     const video = videoRef.current;
     if (video) {
-      if (isVideoPlaying.current) {
-        video.pause();
-      } else {
+      if (video.paused) {
         video.play();
+        setIsVideoPlaying(true);
+      } else {
+        video.pause();
+        setIsVideoPlaying(false);
       }
-      isVideoPlaying.current = !isVideoPlaying.current;
     }
   };
 
@@ -84,7 +85,7 @@ const Header = () => {
         </nav>
       </div>
       <VideoButton onClick={handleVideoToggle}>
-        {isVideoPlaying.current ? <FaStop /> : <FaPlay />}
+        {isVideoPlaying ? <FaStop /> : <FaPlay />}
       </VideoButton>
       <CartButton>
         <FaShoppingCart />
