@@ -281,8 +281,7 @@ body {
 }
 
 @media (max-width: 500px) {
-	.product-list,
-	.cards-container {
+	.product-list {
 		grid-template-columns: 1fr;
 	}
 
@@ -291,8 +290,9 @@ body {
 	}
 
 	.product-card {
-		width: 100%;
+		width: calc(100% - 20px);
 		max-width: unset;
+		margin: 0 10px;
 	}
 
 	.product-card img {
