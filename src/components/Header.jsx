@@ -69,7 +69,7 @@ const Header = () => {
           <h1 className="header-title">Welcome to Eldorado</h1>
           <h2 className="header-subtitle">The best Low Content Book Store ever!</h2>
         </div>
-        <nav className="navbar">
+        <nav className="navbar-header">
           <ul className="nav-links">
             <li className="nav-link">
               <Link to="/">Home</Link>

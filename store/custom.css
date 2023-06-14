@@ -7,14 +7,20 @@
 	margin: 0;
 	font-family: "Quicksand", sans-serif;
   }
+  
 
-  /* Store */
-  .toggle-desktop-menu {
-	left:40px;
+ /* Store */
+.toggle-desktop-menu {
+	left: 40px;
   }
-
+  
+  .store-header {
+	margin-top: 80px;
+	position: relative;
+  }
+  
   .store-main {
-	width: 100%;
+	width: 80%;
 	margin: 0 auto;
   }
   
@@ -22,13 +28,68 @@
 	margin-top: 20px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 20px;
+	gap: 15px;
+	justify-content: center; /* Center the cards horizontally */
+  }
+  
+  @media (max-width: 500px) {
+	.product-list {
+	  grid-template-columns: repeat(1, 1fr);
+	}
+	.store-main {
+	  grid-template-columns: repeat(2, 1fr);
+	  max-width: 210px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+  
+	.product-list {
+	  max-width: 80%;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+  
+	.product-card {
+	  width: 90%; /* Set the width to 100% for full-width display */
+	}
+  
+	.product-image {
+	  width: 100%;
+	  height: auto;
+	}
+  
+	.product-details {
+	  text-align: center;
+	}
+  
+	.product-name {
+	  font-size: 16px;
+	  margin-top: 10px;
+	  margin-bottom: 5px;
+	}
+  
+	.product-price {
+	  font-size: 14px;
+	}
+  
+	.product-desc {
+	  font-size: 14px;
+	  margin-bottom: 10px;
+	}
+  }
+  
+  @media (max-width: 767px) {
+	.product-list {
+	  grid-template-columns: repeat(2, 1fr);
+	}
   }
   
   .product-card {
 	background-color: #f0f0f0;
 	padding: 20px;
 	border-radius: 4px;
+	margin: 0 auto; /* Center the cards horizontally */
+	max-width: 240px; /* Limit the maximum width of each card */
   }
   
   .product-details {
@@ -37,6 +98,18 @@
   
   .logo {
 	width: 100px;
+  }
+
+    /* .navbar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  } */
+
+  .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
   }
   
   .navbar-left ul,
@@ -52,11 +125,48 @@
   
   .navbar-left {
 	display: flex;
+	align-items: center;
   }
   
   .navbar-left ul {
 	margin-left: 12px;
   }
+  
+
+  .navbar-right {
+	display: flex;
+	align-items: center;
+  }
+  
+  .logo {
+	width: 100px;
+  }
+  
+  .navbar-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+  }
+  
+  .navbar-menu li {
+	margin-right: 10px;
+  }
+  
+  .navbar-right a {
+	margin-right: 10px;
+  }
+  
+  .toggle-desktop-menu {
+	left: 40px;
+  }
+
+
+
+
+  
+  
   
   .navbar-left ul li a,
   .navbar-right ul li a {

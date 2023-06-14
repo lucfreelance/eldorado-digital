@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './custom.css';
 import EldoradoStore from './logos/eldorado-logo-small.jpeg';
 import ToggleMobileMenu from './icons/icon_menu.svg';
@@ -38,13 +38,60 @@ const Store = () => {
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       desc: 'Beautiful collar'
     },
-    // Add more products here
+    {
+      name: 'Collar - Flower Princess',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Beautiful collar'
+    },
+    {
+      name: 'Collar - Flower Princess',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Beautiful collar'
+    },
+    {
+      name: 'Collar - Flower Princess',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Beautiful collar'
+    },
+    {
+      name: 'Collar - Flower Princess',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Beautiful collar'
+    },
+    {
+      name: 'Collar - Flower Princess',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Beautiful collar'
+    },
+    {
+      name: 'Collar - Flower Princess',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Beautiful collar'
+    },
+    {
+      name: 'Collar - Flower Princess',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Beautiful collar'
+    },
+    {
+      name: 'Collar - Flower Princess',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Beautiful collar'
+    },
   ];
 
   return (
     <>
       <header className="store-header">
-        <nav className="navbar">
+        <nav className={`navbar ${desktopMenuActive ? 'active' : ''}`}>
           <div className="navbar-left">
             <img src={EldoradoStore} alt="EldoradoStore" title="EldoradoStore" className="logo" />
             <ul className={`navbar-menu ${mobileMenuActive ? 'active' : ''}`}>
@@ -57,33 +104,32 @@ const Store = () => {
               <li>
                 <a href="#">Patterns</a>
               </li>
-              {/* Add more menu items */}
             </ul>
           </div>
-
           <div className="navbar-right">
-            <ul className={`navbar-links ${desktopMenuActive ? 'active' : ''}`}>
-              <li className="navbar-email">eldorado@digital.app</li>
+            <ul>
               <li>
-                <a href="/" className="sign-out">Cerrar</a>
+                <a href="/" className="sign-out">Close</a>
               </li>
-            {/* <li><img
-              src={ToggleMobileMenu}
-              alt="Toggle Desktop Menu"
-              className="toggle-desktop-menu inactive"
-              onClick={toggleDesktopMenu}
-            /></li> */}
-            <li>
-              <a href="./mi-orden.html" className="navbar-cart">
-                <img src={ShoppingCart} alt="cart" />
-                {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
-              </a>
-            </li>
+              <li>
+                <a href="./mi-orden.html" className="navbar-cart">
+                  <img src={ShoppingCart} alt="cart" />
+                  {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
+                </a>
+              </li>
+              <li>
+                <img
+                  src={ToggleMobileMenu}
+                  alt="Toggle Desktop Menu"
+                  className={`toggle-desktop-menu ${desktopMenuActive ? 'active' : ''}`}
+                  onClick={toggleDesktopMenu}
+                />
+              </li>
             </ul>
           </div>
         </nav>
       </header>
-
+  
       <main className="store-main">
         <section className="product-list">
           {productList.map((product, index) => (
@@ -98,7 +144,7 @@ const Store = () => {
             </div>
           ))}
         </section>
-
+  
         {productDetailActive && (
           <div className="modal">
             <div className="modal-content">
@@ -111,6 +157,6 @@ const Store = () => {
       </main>
     </>
   );
-};
+}
 
 export default Store;

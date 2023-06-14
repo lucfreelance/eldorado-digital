@@ -68,7 +68,7 @@
 
 .header-title {
   font-size: 2.1rem;
-  color: #f54040;
+  color: #098c39;
   margin-bottom: 0.6rem;
   text-align: center;
   z-index: -1; 
@@ -76,7 +76,7 @@
 
 .header-subtitle {
   font-size: 1.125rem;
-  color: #098c39;
+  color: #f54040;
   margin-bottom: 1.5rem;
   margin-top: 0;
   text-align: center;
