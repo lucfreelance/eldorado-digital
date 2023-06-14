@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import styled from "styled-components";
-import { FaStop, FaShoppingCart } from 'react-icons/fa';
+import { FaStop, FaPlay, FaShoppingCart } from 'react-icons/fa';
 
 const HeaderContainer = styled.header`
   position: absolute;
@@ -44,18 +44,25 @@ const CartButton = styled.button`
 `;
 
 const Header = () => {
-  const handleVideoStop = () => {
-    // Add logic to stop the video
-  };
+  const videoRef = useRef(null);
+  const isVideoPlaying = useRef(true);
 
-  const handleCartClick = () => {
-    // Add logic to proceed with the shopping cart
+  const handleVideoToggle = () => {
+    const video = videoRef.current;
+    if (video) {
+      if (isVideoPlaying.current) {
+        video.pause();
+      } else {
+        video.play();
+      }
+      isVideoPlaying.current = !isVideoPlaying.current;
+    }
   };
 
   return (
     <HeaderContainer>
       <div className="header-video-container">
-        <video src="https://openaicomproductionae4b.blob.core.windows.net/production-twill-01/a00ea7c2-ed9d-4145-9d81-53aac2d29d6d/graphics-20230518-084016.mp4" autoPlay loop muted className="header-video"></video>
+        <video ref={videoRef} src="https://openaicomproductionae4b.blob.core.windows.net/production-twill-01/a00ea7c2-ed9d-4145-9d81-53aac2d29d6d/graphics-20230518-084016.mp4" autoPlay loop muted className="header-video"></video>
       </div>
       <div className="header-container">
         <div className="header-content">
@@ -76,10 +83,10 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <VideoButton onClick={handleVideoStop}>
-        <FaStop />
+      <VideoButton onClick={handleVideoToggle}>
+        {isVideoPlaying.current ? <FaStop /> : <FaPlay />}
       </VideoButton>
-      <CartButton onClick={handleCartClick}>
+      <CartButton>
         <FaShoppingCart />
       </CartButton>
     </HeaderContainer>
