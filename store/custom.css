@@ -8,10 +8,18 @@ body {
 	font-family: "Quicksand", sans-serif;
 }
 
-.store-header {
+/* .store-header {
 	margin-top: 80px;
 	position: relative;
-}
+} */
+
+.store-header {
+	position: relative;
+	margin-top: 80px;
+	left: 15px;
+	right: 15px;
+	width: 90%;
+  }
 
 .store-main {
 	width: 80%;

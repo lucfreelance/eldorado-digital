@@ -33,6 +33,36 @@ const Store = () => {
       price: 30000,
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+    },
+    {
+      name: 'Collar - Princesa Flor',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+    },
+    {
+      name: 'Collar - Princesa Flor',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+    },
+    {
+      name: 'Collar - Princesa Flor',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+    },
+    {
+      name: 'Collar - Princesa Flor',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+    },
+    {
+      name: 'Collar - Princesa Flor',
+      price: 30000,
+      image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
     }
   ];
 
