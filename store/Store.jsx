@@ -32,37 +32,37 @@ const Store = () => {
       name: 'Collar - Princesa Flor',
       price: 30000,
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+      desc: 'Introducing our 1st Word Soup: FAUNA'
     },
     {
       name: 'Collar - Princesa Flor',
       price: 30000,
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+      desc: 'Este Introducing our 1st Word Soup: FAUNA'
     },
     {
       name: 'Collar - Princesa Flor',
       price: 30000,
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+      desc: 'Este Introducing our 1st Word Soup: FAUNA'
     },
     {
       name: 'Collar - Princesa Flor',
       price: 30000,
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+      desc: 'Este Introducing our 1st Word Soup: FAUNA'
     },
     {
       name: 'Collar - Princesa Flor',
       price: 30000,
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+      desc: 'Este Introducing our 1st Word Soup: FAUNA'
     },
     {
       name: 'Collar - Princesa Flor',
       price: 30000,
       image: 'https://i.ibb.co/svWvHcL/flor.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      desc: 'Este hermoso collar largo de estilo florido ha sido hecho a mano en base a semillas y materiales ecológicos.'
+      desc: 'Este Introducing our 1st Word Soup: FAUNA'
     }
   ];
 
@@ -123,14 +123,14 @@ const Store = () => {
         <section className="product-list">
           {productList.map((product, index) => (
             <div key={index} className="product-card" onClick={() => openProductDetail(product)}>
-<img src={product.image} alt={product.name} />
-                <div className="product-info">
-                  <h3>{product.name}</h3>
-                  <p>{product.desc}</p>
-                  <button className="add-to-cart">Add to Cart</button>
-                </div>
+              <img src={product.image} alt={product.name} />
+              <div className="product-info">
+                <h3>{product.name}</h3>
+                <p>{product.desc}</p>
+                <button className="add-to-cart">Add to Cart</button>
               </div>
-            ))}
+            </div>
+          ))}
         </section>
       </main>
 
@@ -140,16 +140,18 @@ const Store = () => {
             <span className="close-modal" onClick={closeModal}>
               &times;
             </span>
-            <div className="product-details">
-              <img src={productList[0].image} alt={productList[0].name} />
-              <div className="product-info">
-                <h3>{productList[0].name}</h3>
-                <p>{productList[0].desc}</p>
-                <button className="add-to-cart" onClick={() => addToCart(productList[0])}>
-                  Add to Cart
-                </button>
+            {productList.map((product, index) => (
+              <div key={index} className="product-details">
+                <img src={product.image} alt={product.name} />
+                <div className="product-info">
+                  <h3>{product.name}</h3>
+                  <p>{product.desc}</p>
+                  <button className="add-to-cart" onClick={() => addToCart(product)}>
+                    Add to Cart
+                  </button>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       )}
