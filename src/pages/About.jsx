@@ -11,7 +11,7 @@ const AboutContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f7f7f7;
-  margin-top: 80px;
+  margin-top: 90px;
   margin-left: auto;
   margin-right: auto;
   max-width: 600px;
