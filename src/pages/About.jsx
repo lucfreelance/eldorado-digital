@@ -14,7 +14,7 @@ const AboutContainer = styled.div`
   margin-top: 90px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 600px;
+  max-width: 750px;
 `;
 
 const AboutImage = styled.img`
@@ -49,20 +49,6 @@ const Description = styled.p`
     right: 5px;
   }
 `;
-
-// const DescriptionTwo = styled.p`
-//   font-size: 18px;
-//   color: #999;
-//   margin-bottom, 20px;
-//   margin-top: 20px;
-//   position: relative;
-
-//   &:after {
-//     content: '🌙';
-//     position: relative;
-//     right: 5px;
-//   }
-// `;
 
 const ButtonContainer = styled.div`
   display: flex;
