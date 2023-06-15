@@ -12,7 +12,7 @@ const AboutContainer = styled.div`
   border-radius: 8px;
   background-color: #f7f7f7;
   margin-top: 90px;
-  margin-left: auto;
+  margin-left: 5px;
   margin-right: auto;
   max-width: 750px;
 `;
