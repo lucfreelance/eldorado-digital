@@ -51,6 +51,9 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: #f9fed5;
+	border-radius: 0 0 50% 50%;  
+	margin-top: -10px;
 }
 
 
@@ -60,7 +63,9 @@ body {
 
 
 .logo {
-	width: 100px;
+	width: 50%;
+	border-radius: 0 0 50% 50%;  
+	margin-top: -16px;
 }
 
 .navbar-menu {

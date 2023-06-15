@@ -30,10 +30,10 @@ const Store = () => {
 
   const productList = [
     {
-      name: 'Word Soup #1 - Theme: FAUNA',
+      name: 'Word Search # 1 - Theme: FAUNA',
       price: 12,
       image: 'https://i.imgur.com/QTIy72i.jpg',
-      desc: 'Introducing our 1st Word Soup throught Amazon KDP: FAUNA'
+      desc: 'Introducing our 1st Word Search Puzzle through Amazon KDP'
     },
     {
       name: 'Coloring Book 1 - Living the Petty Dream',
